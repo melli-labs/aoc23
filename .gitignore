@@ -1,0 +1,14 @@
+.direnv
+result
+
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!README.md
+!.envrc
+!flake.nix
+!flake.lock
+!*.roc
+!settings.json
