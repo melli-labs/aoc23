@@ -25,7 +25,7 @@
           (import systems)
           (
             system: f {
-              roc = roc.packages.${system}.default;
+              roc = roc.packages.${system}.full;
               pkgs = import nixpkgs {
                 inherit system;
                 overlays = [ devshell.overlays.default (import rust-overlay) ];

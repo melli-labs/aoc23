@@ -21,3 +21,12 @@ roc format <file>
 * Examples: https://www.roc-lang.org/examples
 * Docs - Builtins: https://www.roc-lang.org/packages/basic-cli
 * Docs - CLI Platform: https://www.roc-lang.org/packages/basic-cli
+
+## Helix
+
+Add syntax highlighting (see https://docs.helix-editor.com/languages.html#tree-sitter-grammar-configuration):
+
+```sh
+hx --grammar fetch
+hx --grammar build
+```
