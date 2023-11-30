@@ -19,7 +19,7 @@ roc format <file>
 ## Resources
 
 * Examples: https://www.roc-lang.org/examples
-* Docs - Builtins: https://www.roc-lang.org/packages/basic-cli
+* Docs - Builtins: https://www.roc-lang.org/builtins
 * Docs - CLI Platform: https://www.roc-lang.org/packages/basic-cli
 
 ## Helix
