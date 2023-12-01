@@ -7,10 +7,17 @@ result
 # But not these files...
 !.gitignore
 !README.md
-!.envrc
+# nix
 !flake.nix
 !flake.lock
+# direnv
+!.envrc
+# source code
 !*.roc
+# puzzle input
+!*.txt
+# vscode
 !settings.json
 !extensions.json
-!*.txt
+# helix
+!languages.toml
