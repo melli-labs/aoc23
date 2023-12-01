@@ -12,3 +12,5 @@ result
 !flake.lock
 !*.roc
 !settings.json
+!extensions.json
+!*.txt
