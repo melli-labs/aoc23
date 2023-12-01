@@ -22,7 +22,13 @@ roc format <file>
 * Docs - Builtins: https://www.roc-lang.org/builtins
 * Docs - CLI Platform: https://www.roc-lang.org/packages/basic-cli
 
-## Helix
+## Language Support
+
+### VS Code
+
+Install the Roc extension: https://marketplace.visualstudio.com/items?itemName=IvanDemchenko.roc-lang-unofficial
+
+### Helix
 
 Add syntax highlighting (see https://docs.helix-editor.com/languages.html#tree-sitter-grammar-configuration):
 
