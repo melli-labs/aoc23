@@ -37,7 +37,7 @@ main =
 
     Task.onErr task \_ -> Stdout.line "error: failed to read file \(path)"
 
-part1 : Str -> Result I32 [NoNumber]
+part1 : Str -> Result Nat [NoNumber]
 part1 = \text ->
     text
     |> Str.trim
@@ -46,7 +46,7 @@ part1 = \text ->
         numbers =
             line
             |> Str.graphemes
-            |> List.keepOks Str.toI32
+            |> List.keepOks Str.toNat
         when (List.first numbers, List.last numbers) is
             (Ok first, Ok last) -> Ok (10 * first + last)
             _ -> Err NoNumber
@@ -65,22 +65,9 @@ part2V1 = \text ->
         ("eight", "e8t"),
         ("nine", "n9e"),
     ]
-    sanatized =
-        words
-        |> List.walk text \acc, (a, b) -> acc |> Str.replaceEach a b
-
-    sanatized
-    |> Str.trim
-    |> Str.split "\n"
-    |> List.mapTry \line ->
-        numbers =
-            line
-            |> Str.graphemes
-            |> List.keepOks Str.toNat
-        when (List.first numbers, List.last numbers) is
-            (Ok first, Ok last) -> Ok (10 * first + last)
-            _ -> Err NoNumber
-    |> Result.map List.sum
+    words
+    |> List.walk text \acc, (a, b) -> acc |> Str.replaceEach a b
+    |> part1
 
 part2V2 : Str -> Result Nat [NoNumber]
 part2V2 = \text ->
