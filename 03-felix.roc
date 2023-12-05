@@ -14,15 +14,13 @@ main =
 
         output1 =
             when part1 text is
-                Ok answer -> "Part 1) Answer: \(Num.toStr answer)"
-                Err HardProgrammingError -> "Part 1) Error: invalid input"
+                Ok answer -> "Answer: \(Num.toStr answer)"
+                Err HardProgrammingError -> "Error: invalid input"
 
-        Str.joinWith
-            [
-                output1,
-            ]
-            "\n"
-        |> Stdout.line
+        Stdout.line
+            """
+            Part 1) \(output1)
+            """
 
     Task.onErr task \_ -> Stdout.line "error: failed to read file \(path)"
 

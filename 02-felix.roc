@@ -13,20 +13,18 @@ main =
 
         output1 =
             when part1 text is
-                Ok answer -> "Part 1) Answer: \(Num.toStr answer)"
-                Err (InvalidLine line) -> "Part 1) Error: invalid line: '\(line)'"
+                Ok answer -> "Answer: \(Num.toStr answer)"
+                Err (InvalidLine line) -> "Error: invalid line: '\(line)'"
         output2 =
             when part2 text is
-                Ok answer -> "Part 2) Answer: \(Num.toStr answer)"
-                Err (InvalidLine line) -> "Part 2) Error: invalid line: '\(line)'"
+                Ok answer -> "Answer: \(Num.toStr answer)"
+                Err (InvalidLine line) -> "Error: invalid line: '\(line)'"
 
-        Str.joinWith
-            [
-                output1,
-                output2,
-            ]
-            "\n"
-        |> Stdout.line
+        Stdout.line
+            """
+            Part 1) \(output1)
+            Part 2) \(output2)
+            """
 
     Task.onErr task \_ -> Stdout.line "error: failed to read file \(path)"
 

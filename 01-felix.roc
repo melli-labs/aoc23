@@ -13,27 +13,25 @@ main =
 
         output1 =
             when part1 text is
-                Ok answer -> "Part 1) Answer: \(Num.toStr answer)"
-                Err NoNumber -> "Part 1) Error: Not all lines contain a number!"
+                Ok answer -> "Answer: \(Num.toStr answer)"
+                Err NoNumber -> "Error: Not all lines contain a number!"
 
         output2v1 =
             when part2V1 text is
-                Ok answer -> "Part 2v1) Answer: \(Num.toStr answer)"
-                Err NoNumber -> "Part 2v1) Error: Not all lines contain a number!"
+                Ok answer -> "Answer: \(Num.toStr answer)"
+                Err NoNumber -> "Error: Not all lines contain a number!"
 
         output2v2 =
             when part2V2 text is
-                Ok answer -> "Part 2v2) Answer: \(Num.toStr answer)"
-                Err NoNumber -> "Part 2v2) Error: Not all lines contain a number!"
+                Ok answer -> "Answer: \(Num.toStr answer)"
+                Err NoNumber -> "Error: Not all lines contain a number!"
 
-        Str.joinWith
-            [
-                output1,
-                output2v1,
-                output2v2,
-            ]
-            "\n"
-        |> Stdout.line
+        Stdout.line
+            """
+            Part 1) \(output1)
+            Part 2v1) \(output2v1)
+            Part 2v2) \(output2v2)
+            """
 
     Task.onErr task \_ -> Stdout.line "error: failed to read file \(path)"
 
